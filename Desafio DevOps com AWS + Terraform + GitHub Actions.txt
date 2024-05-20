@@ -1,0 +1,12 @@
+
+>> Conta AWS utilizada para o Lab: henriquecezar.estudo+aws1@gmail.com
+>> Conta Github utilizada para o Lab: henrique-cezar (henriquedopradocezar@gmail.com)
+
+Tem criar um usuario no IAM do AWS.
+- Utilização de módulos no terraform
+
+Ao invés de passar os valores de configuração do Backend para armazenar o state no S3, utiliza variáveis de ambiente no comando de init do terraform
+terraform init -backend-config="bucket=hcezar-terraform-state" -backend-config="key=estudo-k8s.tfstate" -backend-config="region=us-east-1" -backend-config="profile=estudosadm" -reconfigure
+
+
+-- Parte do Github
