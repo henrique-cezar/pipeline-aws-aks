@@ -12,17 +12,17 @@ module "vpc" {
   enable_nat_gateway = true
   enable_vpn_gateway = true
 
-  tags = merge(var.aws_project_tags, {"kubernetes.io/cluster/${var.aws_eks_name}" = "shared"})
+  tags = merge(var.aws_project_tags, { "kubernetes.io/cluster/${var.aws_eks_name}" = "shared" })
 
   #Tags needed to allow AKS to use the VPC
   public_subnet_tags = {
     "kubernetes.io/cluster/${var.aws_eks_name}" = "shared"
-    "kubernetes.io/roles/elb" = 1
+    "kubernetes.io/roles/elb"                   = 1
   }
-  
+
   private_subnet_tags = {
     "kubernetes.io/cluster/${var.aws_eks_name}" = "shared"
-    "kubernetes.io/roles/internal-elb" = 1
+    "kubernetes.io/roles/internal-elb"          = 1
   }
 
 }
@@ -49,6 +49,7 @@ module "eks" {
       instance_types = var.aws_eks_managed_node_groups_instance_types
     }
   }
+  tags = var.aws_project_tags
 }
 
 #Parei em 1:49:09

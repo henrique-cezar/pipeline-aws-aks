@@ -9,4 +9,4 @@ Ao invés de passar os valores de configuração do Backend para armazenar o sta
 terraform init -backend-config="bucket=hcezar-terraform-state" -backend-config="key=estudo-k8s.tfstate" -backend-config="region=us-east-1" -backend-config="profile=estudosadm" -reconfigure
 
 
--- Parte do Github
+-- Subir no Github
